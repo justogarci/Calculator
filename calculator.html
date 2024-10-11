@@ -13,24 +13,63 @@
     <input type="text" id="inputField" placeholder="Ingresa un número" />
     <input type="text" id="exponentField" placeholder="Ingresa un exponente (opcional)" />
 
-    <!-- Campo informativo -->
-    <h2 id="info" class="big" title="Info about the number">Información sobre el número</h2>
+
 
     <!-- Botones para operaciones -->
-    <button id="square">Cuadrado</button>
-    <button id="sqrt">Raíz Cuadrada</button>
-    <button id="modulo">Módulo</button>
-    <button id="factorial">Factorial</button>
-    <button id="exponentiation">Potencia</button>
+<div class="calculator">
+    <div class="left-buttons">
+        <button id="square">Cuadrado</button>
+        <button id="sqrt">Raíz Cuadrada</button>
+        <button id="modulo">Módulo</button>
+        <button id="factorial">Factorial</button>
+        
+    </div>
+    <!-- Botones para operaciones binarias -->
 
+    <div class="right-buttons">
+        <button id="exponentiation">Potencia</button>
+        <button id="add">Suma</button>
+        <button id="multiply">Multiplicación</button>
+        <button id="equal">=</button>
+    </div>
+</div>
     <!-- Operaciones CSV -->
-    <input type="text" id="csvField" placeholder="Ingresa una lista CSV" />
-    <button id="csvSum">Sumar CSV</button>
-    <button id="csvAvg">Promedio CSV</button>
-    <button id="csvSort">Ordenar CSV</button>
-    <button id="csvReverse">Revertir CSV</button>
-    <button id="csvRemoveElement">Eliminar Elemento</button>
+<input type="text" id="csvField" placeholder="Ingresa una lista CSV" />
+<div class="csv-buttons-container">
+    <div class="csv-buttons">    
+        <button id="csvSum">Sumar CSV</button>
+        <button id="csvAvg">Promedio CSV</button>
+        <button id="csvSort">Ordenar CSV</button>
+    </div>
+    <div class="csv-buttons">   
+        <button id="csvReverse">Revertir CSV</button>
+        <button id="csvRemoveElement">Eliminar Elemento</button>
+    </div>
+</div>
+ <!-- Imagen que será animada -->
+ <img id="animated-img" src="imagen2.jpg" alt="Imagen animada" />
 
+ <script>
+     // Escuchar cuando se hace clic en el botón "="
+     document.getElementById('equal').addEventListener('click', function() {
+         const image = document.getElementById('animated-img');
+         
+         // Restablecer la transición y la posición inicial para permitir múltiples animaciones
+         image.style.transition = 'none';
+         image.style.transform = 'translateX(0)';
+
+         // Forzar un reflow para que el navegador aplique los cambios
+         void image.offsetWidth;
+
+         // Aplicar la animación después de un pequeño retraso
+         setTimeout(() => {
+             image.style.transition = 'transform 2s ease-in-out'; // Transición de 2 segundos
+             image.style.transform = 'translateX(100vw)'; // Mover la imagen fuera de la pantalla a la derecha
+         }, 50);
+     });
+ </script>
+<!-- Campo informativo -->
+<h2 id="info" class="big" title="Info about the number">Información sobre el número</h2>
     <!-- Script para funcionalidades -->
     <script src="operations.js"></script>
 </body>

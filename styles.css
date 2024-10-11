@@ -1,32 +1,110 @@
 body {
     font-family: Arial, sans-serif;
-    text-align: center;
-    margin: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    margin: 0;
+    background-image: url('imagen3.jpg');
+    background-position: left top ;
+    background-size: 1400px 800px;
+    background-repeat: no-repeat;
 }
 
-input {
-    font-size: 1.5em;
-    padding: 10px;
-    width: 300px;
-    margin-bottom: 20px;
+h1 {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+input[type="text"] {
+    width: 180px;
+    padding: 5px;
+    margin: 5px 0;
+    font-size: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.calculator-container {
+    background-color: #b0b0b0; /* Color gris del fondo */
+    padding: 20px;
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para darle un efecto de profundidad */
+}
+
+.calculator, .csv-buttons-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.left-buttons, .right-buttons, .csv-buttons {
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
 }
 
 button {
-    font-size: 1.2em;
-    margin: 10px;
-    padding: 10px 20px;
+    width: 90px;
+    padding: 5px;
+    margin: 5px;
+    font-size: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-button:focus {
-    outline: 2px solid blue;
-}
-
-#info {
-    margin-top: 20px;
-    font-size: 1.5em;
-    color: #333;
+button:hover {
+    background-color: #0056b3;
 }
 
 button:active {
-    background-color: yellow;
+    background-color: #003f7f;
+}
+
+#csvField {
+    width: 180px;
+    padding: 5px;
+    margin: 5px 0;
+    font-size: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#info {
+    margin-top: 10px;
+    padding: 5px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    width: 180px;
+    text-align: center;
+}
+
+button:nth-child(5) {
+    background-color: #28a745;
+}
+
+button:nth-child(5):hover {
+    background-color: #218838;
+}
+
+button:nth-child(5):active {
+    background-color: #1e7e34;
+}
+
+#animated-img {
+    position: absolute;
+    top: 50%;
+    left: -100px; /* Fuera de la pantalla a la izquierda */
+    width: 100px;
+    height: 100px;
+    transition: transform 2s ease-in-out; /* Transición suave en 2 segundos */
+    transform: translateX(0); /* Valor inicial, sin movimiento */
 }
